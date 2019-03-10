@@ -6,6 +6,7 @@ SpringBoot集成Dubbo和Hystrix的项目，可以当做案例用于学习。
 
 #### 目前实现
 - 1、springboot集成dubbo
+- 2、使用Zookeeper注册中心
 
 #### 未实现
 - 1、连接数据库
