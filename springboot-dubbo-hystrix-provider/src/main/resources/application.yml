@@ -1,0 +1,16 @@
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: springboot-dubbo-hystrix-provider
+    
+dubbo:
+  scan:
+    base-packages: com.plf.order.provider.service.impl
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20880   
+    
