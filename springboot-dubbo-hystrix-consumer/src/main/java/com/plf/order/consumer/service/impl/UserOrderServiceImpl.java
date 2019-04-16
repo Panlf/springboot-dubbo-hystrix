@@ -17,11 +17,9 @@ public class UserOrderServiceImpl implements UserOrderService{
 	@Reference(version="1.0.0")
 	private OrderService orderService;
 	
-	@Override
 	public UserOrder findUserOrderInfo(Integer id) {
 		List<Order> orderList = orderService.getOrderByUserId(id);
 		UserOrder userOrder = new UserOrder(id,"Elise",orderList);
 		return userOrder;
 	}
-
 }

@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: springboot-dubbo-hystrix-provider
+  main:
+    allow-bean-definition-overriding: true  
     
 dubbo:
   scan:

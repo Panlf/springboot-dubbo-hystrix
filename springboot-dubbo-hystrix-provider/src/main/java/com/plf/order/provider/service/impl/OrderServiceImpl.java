@@ -13,9 +13,15 @@ import com.plf.order.provider.service.OrderService;
 @Component
 @Service(version="1.0.0") //暴露服务
 public class OrderServiceImpl implements OrderService {
-
+	
+	
 	@Override
 	public List<Order> getOrderByUserId(Integer id) {
+		//人为构造异常
+		if(Math.random()>0.5){
+			throw new RuntimeException();
+		}
+		
 		Order order1 = new Order(11,new Date(),58.8,id);
 		Order order2 = new Order(12,new Date(),123.4,id);
 		Order order3 = new Order(13,new Date(),526.7,id);
