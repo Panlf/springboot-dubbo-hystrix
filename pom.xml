@@ -10,6 +10,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<springboot.version>2.1.1.RELEASE</springboot.version>
 	</properties>
 
 	<dependencyManagement>
@@ -101,7 +102,19 @@
 				<artifactId>
 				spring-cloud-starter-netflix-hystrix
 				</artifactId>
-				<version>2.1.1.RELEASE</version>
+				<version>${springboot.version}</version>
+			</dependency>
+
+			<dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+			    <version>${springboot.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>${springboot.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -110,5 +123,6 @@
 		<module>springboot-dubbo-hystrix-service</module>
 		<module>springboot-dubbo-hystrix-provider</module>
 		<module>springboot-dubbo-hystrix-consumer</module>
+		<module>springboot-monitor-hystrix-dashboard</module>
 	</modules>
 </project>
