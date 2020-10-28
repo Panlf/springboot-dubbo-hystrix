@@ -21,7 +21,7 @@ public class Order implements Serializable{
 	
 	private static final long serialVersionUID = -7580587173873225694L;
 	
-	private Integer id;
+	private Long id;
 	
 	private Date createtime;
 	

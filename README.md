@@ -9,11 +9,10 @@ SpringBoot集成Dubbo和Hystrix的项目，可以当做案例用于学习。
 dubbo-spring-boot-starter 2.7.0 整合Hystrix或者Eureka会遇到Bug，需要2.7.1解决。
 
 #### 目前实现
-- 1、springboot集成dubbo
+- 1、SpringBoot集成Dubbo、MyBatis、Hystrix
 - 2、使用Zookeeper注册中心
-
-#### 未实现
-- 1、连接数据库
+- 3、使用MySQL数据库
+- 4、集成Hystrix-Dashboard
 
 
 #### Dubbo Admin

@@ -1,9 +1,0 @@
-server:
-  port: 7000
-
-
-spring:
-  application:
-    name: springboot-monitor-hystrix-dashboard
-
- 

@@ -6,7 +6,20 @@ spring:
     name: springboot-dubbo-hystrix-provider
   main:
     allow-bean-definition-overriding: true  
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+   
+logging:
+  level:
+    com.plf.order.provider.mapper: debug  
     
+  
+mybatis:  type-aliases-package: com.plf.order.bean
 dubbo:
   scan:
     base-packages: com.plf.order.provider.service.impl
