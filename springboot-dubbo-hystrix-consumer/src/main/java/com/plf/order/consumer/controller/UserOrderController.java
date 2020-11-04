@@ -15,12 +15,35 @@ public class UserOrderController {
 	@Autowired
 	private UserOrderService userOrderService;
 	
+	/**
+	 * 服务不会降级，应为default是5s
+	 * @param id
+	 * @return
+	 */
+	@HystrixCommand(fallbackMethod="findCallBack")
 	@GetMapping(value="/find/{id}")
 	public UserOrder getUserOrder(@PathVariable(value="id") Integer id){
 		return userOrderService.findUserOrderInfo(id);
 	}
 	
-	@HystrixCommand(fallbackMethod="findCallBack")
+	//局部配置
+	/*
+	@HystrixCommand(fallbackMethod="findCallBack",commandProperties = {
+			//默认是1s
+			@HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="2000")
+	})
+	@GetMapping(value="/find")
+	public UserOrder getUserOrderById(@RequestParam Integer id){
+		return userOrderService.findUserOrderInfo(id);
+	}
+	*/
+	
+	/**
+	 * 服务会降级，实例配置属性
+	 * @param id
+	 * @return
+	 */
+	@HystrixCommand(fallbackMethod="findCallBack",commandKey = "orderIdKey")
 	@GetMapping(value="/find")
 	public UserOrder getUserOrderById(@RequestParam Integer id){
 		return userOrderService.findUserOrderInfo(id);

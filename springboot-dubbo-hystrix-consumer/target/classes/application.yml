@@ -14,3 +14,9 @@ dubbo:
   registry:
     address: zookeeper://127.0.0.1:2181
  
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 5000
+    orderIdKey:
+      execution.isolation.thread.timeoutInMilliseconds: 2000
